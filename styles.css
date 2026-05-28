@@ -1,5 +1,4 @@
-/* Oculta elementos hasta que <model-viewer> esté definido */
-:not(:defined) > * {
+/* Oculta elementos hasta que <model-viewer> esté definido */:not(:defined) > * {
   display: none;
 }
 
