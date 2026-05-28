@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <title>Celula Vegetal AR</title>
+    <meta charset="utf-8">
+    <meta name="description" content="Modelo 3D célula vegetal en AR">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link type="text/css" href="./styles.css" rel="stylesheet"/>
+  </head>
+  <body>
+    <!-- Modelo 3D con <model-viewer> -->
+    <model-viewer src="celula_vegetal.glb" 
+                  ar 
+                  ar-modes="webxr scene-viewer quick-look" 
+                  camera-controls 
+                  tone-mapping="neutral" 
+                  poster="poster.webp" 
+                  shadow-intensity="1">
+      
+      <!-- Barra de progreso -->
+      <div class="progress-bar hide" slot="progress-bar">
+        <div class="update-bar"></div>
+      </div>
+
+      <!-- Botón AR -->
+      <button slot="ar-button" id="ar-button">
+        Ver en tu espacio
+      </button>
+
+      <!-- Prompt AR -->
+      <div id="ar-prompt">
+        <img src="ar_hand_prompt.png" alt="AR prompt">
+      </div>
+    </model-viewer>  
+
+    <!-- Script personalizado -->
+    <script src="script.js"></script>
+
+    <!-- Carga de <model-viewer> desde CDN -->
+    <script type="module" src="https://ajax.googleapis.com/ajax/libs/model-viewer/3.5.0/model-viewer.min.js"></script>
+  </body>
+</html>
